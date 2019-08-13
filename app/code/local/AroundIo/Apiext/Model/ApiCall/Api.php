@@ -10,11 +10,12 @@ class AroundIo_Apiext_Model_ApiCall_Api
         $productlist = array();
          
         $details = Mage::getModel('catalog/product');
-        // $tags = Mage::getModel('tag/tag');
+        $prefix = Mage::getConfig()->getTablePrefix();
+        //// $tags = Mage::getModel('tag/tag');
         $connection = Mage::getSingleton('core/resource')->getConnection('core_read');
-        $getalltagsql        = "SELECT tag_relation.product_id, tag.name FROM tag, tag_relation where tag.tag_id = tag_relation.tag_id";
+        $getalltagsql        = "SELECT ".$prefix."tag_relation.product_id, ".$prefix."tag.name FROM ".$prefix."tag, ".$prefix."tag_relation where ".$prefix."tag.tag_id = ".$prefix."tag_relation.tag_id";
         $tagrows       = $connection->fetchAll($getalltagsql);
-        $getallmediasql        = "SELECT catalog_product_entity_media_gallery.value, catalog_product_entity_media_gallery.entity_id, catalog_product_entity_media_gallery.value_id, catalog_product_entity_media_gallery_value.position FROM catalog_product_entity_media_gallery, catalog_product_entity_media_gallery_value where catalog_product_entity_media_gallery.value_id = catalog_product_entity_media_gallery_value.value_id";
+        $getallmediasql        = "SELECT ".$prefix."catalog_product_entity_media_gallery.value, ".$prefix."catalog_product_entity_media_gallery.entity_id, ".$prefix."catalog_product_entity_media_gallery.value_id, ".$prefix."catalog_product_entity_media_gallery_value.position FROM ".$prefix."catalog_product_entity_media_gallery, ".$prefix."catalog_product_entity_media_gallery_value where ".$prefix."catalog_product_entity_media_gallery.value_id = ".$prefix."catalog_product_entity_media_gallery_value.value_id";
         $mediarows       = $connection->fetchAll($getallmediasql);
          $t=array();$m=array();
         foreach ($allproducts as $product)
@@ -52,6 +53,47 @@ class AroundIo_Apiext_Model_ApiCall_Api
         }
          
         return $productlist;
+    }
+
+    public function debugging()
+    {
+        $debugDetails = array();
+        
+        //clear cache
+        try {
+            Mage::app()->cleanCache();
+            $clearcache = 1;
+        } catch (Exception $e) {
+            $clearcache =0;
+        }
+        
+        //reindex
+        try {
+            for ($i = 1; $i <= 9; $i++) {
+                $process = Mage::getModel('index/process')->load($i);
+                $process->reindexAll();
+            }
+            $reindexing = 1;
+        } catch (Exception $e) {
+            $reindexing = 0;             
+        }
+        
+        //db name
+        $dbname = Mage::getConfig()->getResourceConnectionConfig('default_setup')->dbname;
+        
+        //version
+        $magentoVersion = Mage::getVersion();
+        
+        //prefix
+        $prefix = Mage::getConfig()->getTablePrefix();
+
+        //number of products
+        $products = Mage::getResourceModel('reports/product_collection')->addAttributeToSelect('*');
+        $count = count($products);
+
+        $debugDetails = array('cleancache' => $clearcache, 'reindexing' => $reindexing, 'dbname' => $dbname, 'version' => $magentoVersion, 'DBprefix' => $prefix, 'productcount' => $count);
+        
+        return $debugDetails;
     }
     
 }
