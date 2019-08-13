@@ -1,14 +1,12 @@
 <?php
 class AroundIo_Apiext_Model_ApiCall_Api
 {
-    public function productDetails()
+    public function productDetails($input)
     {
         
-         
-        $allproducts = Mage::getResourceModel('reports/product_collection')
-                                    ->addAttributeToSelect('*');
+        $var = json_decode($input);
+        $allproducts = Mage::getResourceModel('reports/product_collection')->setPageSize($var->limit)->setCurPage($var->offset);
         $productlist = array();
-         
         $details = Mage::getModel('catalog/product');
         $prefix = Mage::getConfig()->getTablePrefix();
         //// $tags = Mage::getModel('tag/tag');
@@ -20,6 +18,7 @@ class AroundIo_Apiext_Model_ApiCall_Api
          $t=array();$m=array();
         foreach ($allproducts as $product)
         {
+            $lastId = $product['entity_id'];
             $details->load($product['entity_id']);
             foreach ($tagrows as $tag) {
                 if($tag['product_id']==$product['entity_id']) {
@@ -51,8 +50,8 @@ class AroundIo_Apiext_Model_ApiCall_Api
             $m = null;
             $mainimgurl = null;
         }
-         
-        return $productlist;
+
+        return array('lastId'=>$lastId, 'data'=>$productlist);
     }
 
     public function debugging()

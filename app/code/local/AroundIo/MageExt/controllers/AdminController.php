@@ -353,6 +353,7 @@ private $apiKey = null;
 		//die('dddd');
 		
 		$xmlPath = Mage::getBaseDir('app').DS. 'code' .DS. 'local' .DS. 'AroundIo' .DS. 'MageExt'.DS. 'etc' .DS. 'mageext_api.xml';
+        var_dump($xmlPath);
 		//$xmlObj = new Varien_Simplexml_Config($xmlPath);
 		$xmlObj = simplexml_load_file($xmlPath);
 		//$xmlObj->api_role_id = 22;
@@ -451,7 +452,7 @@ private $apiKey = null;
 		$string = '';    
 
 		for ($p = 0; $p < $length; $p++) {
-			$string .= $characters[mt_rand(0, strlen($characters))];
+			$string .= $characters[mt_rand(0, 25)];
 		}
 
 		return $string;

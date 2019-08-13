@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>Around_io</name>
-    <version>1.2.3</version>
+    <version>1.2.4</version>
     <stability>stable</stability>
     <license uri="https://Around.io">Aroundio Trial License</license>
     <channel>community</channel>
@@ -10,9 +10,9 @@
     <description>A social media marketing automation tool. Plan, schedule and automate your social media postings in no time. We fetch (with your permission) all your product details from your online shop and give you pre filled option to post on multiple platforms. You get to choose from all your images, and hashtags, you can decide which image to post on which platform at what time. Super easy to use and deliver constant traffic to your online shop.</description>
     <notes>This is a stable version, go ahead and use it. I am always here (hi@around.io) to help.</notes>
     <authors><author><name>Aroundio</name><user>Aroundio</user><email>hi@around.io</email></author></authors>
-    <date>2015-07-06</date>
-    <time>13:03:36</time>
-    <contents><target name="magelocal"><dir name="AroundIo"><dir name="Apiext"><dir name="Helper"><file name="Data.php" hash="05895505117911f1d6942c7d12dbf602"/></dir><dir name="Model"><dir name="ApiCall"><file name="Api.php" hash="9fe042f0ebe9bb86f1afab6ceae50ead"/></dir></dir><dir name="etc"><file name="api.xml" hash="471d695d138203c1d87bd00d086f1804"/><file name="config.xml" hash="191ad2d2274db54f52a0cca4fb6921ae"/></dir></dir><dir name="MageExt"><dir name="Block"><file name="MageExt.php" hash="cb8aa476d78f84d8f5a525d54bbfefd3"/><file name="logo_aroundio.png" hash="50a68434aef6f33246dbd525b3fbba45"/><file name="mageext.phtml" hash="7ec1ddff1a7abc36c72d5f7a40de6f05"/></dir><dir name="Helper"><file name="Data.php" hash="341920b8de64dcaaef27b9ed1433369b"/></dir><dir name="controllers"><file name="AdminController.php" hash="e7c894405199381bf65001a306091277"/></dir><dir name="etc"><file name="config.xml" hash="0e9a1c84aea654853bf7c2cafeaccc0b"/><file name="mageext_api.xml" hash="30129d498e3f811fe5a1108568211dfe"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="AroundIo_Apiext.xml" hash="243e746273a436451a5eea9ffc10c6d1"/><file name="AroundIo_MageExt.xml" hash="56ebaac5be54eb080a6b25308383c3a3"/></dir></target></contents>
+    <date>2015-07-15</date>
+    <time>11:25:22</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="AroundIo_Apiext.xml" hash="243e746273a436451a5eea9ffc10c6d1"/><file name="AroundIo_MageExt.xml" hash="56ebaac5be54eb080a6b25308383c3a3"/></dir></target><target name="magelocal"><dir name="AroundIo"><dir name="Apiext"><dir name="Helper"><file name="Data.php" hash="05895505117911f1d6942c7d12dbf602"/></dir><dir name="Model"><dir name="ApiCall"><file name="Api.php" hash="98d47e812411f2321369a7ad06328710"/></dir></dir><dir name="etc"><file name="api.xml" hash="471d695d138203c1d87bd00d086f1804"/><file name="config.xml" hash="191ad2d2274db54f52a0cca4fb6921ae"/><file name="wsdl.xml" hash="c10d170cadd956bf095bb5c7c2ca2f9c"/></dir></dir><dir name="MageExt"><dir name="Block"><file name="MageExt.php" hash="cb8aa476d78f84d8f5a525d54bbfefd3"/><file name="logo_aroundio.png" hash="50a68434aef6f33246dbd525b3fbba45"/><file name="mageext.phtml" hash="7ec1ddff1a7abc36c72d5f7a40de6f05"/></dir><dir name="Helper"><file name="Data.php" hash="341920b8de64dcaaef27b9ed1433369b"/></dir><dir name="controllers"><file name="AdminController.php" hash="66e781cfdbdc63e59540d9a6e0f55e9f"/></dir><dir name="etc"><file name="config.xml" hash="0e9a1c84aea654853bf7c2cafeaccc0b"/><file name="mageext_api.xml" hash="497df40caa33ed08faa5521bf2d7383e"/></dir></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
