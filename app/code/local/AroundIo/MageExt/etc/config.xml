@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AroundIo_MageExt>
+            <version>0.1.2</version>
+        </AroundIo_MageExt>
+    </modules>
+    <frontend>
+        <routers>
+            <mageext>
+                <use>standard</use>
+                <args>
+                    <module>AroundIo_MageExt</module>
+                    <frontName>mageext</frontName>
+                </args>
+            </mageext>
+        </routers>
+        <layout>
+            <updates>
+                <mageext>
+                    <file>mageext.xml</file>
+                </mageext>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<mageext>
+				<use>admin</use>
+				<args>
+					<module>AroundIo_MageExt</module>
+					<frontName>mageext</frontName>
+				</args>
+		
+			</mageext>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<mageext module="mageext">
+				<title>Around Io</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="mageext">
+						<title>Create API</title>
+						<sort_order>0</sort_order>
+						<!--<action>mageext/adminhtml_mageext</action> -->
+						<action>mageext/admin/</action>
+					</items>
+				</children>
+			</mageext>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<AroundIo_MageExt>
+							<title>MageExt Module</title>
+							<sort_order>10</sort_order>
+						</AroundIo_MageExt>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<mageext>
+					<file>mageext.xml</file>
+				</mageext>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <blocks>
+            <mageext>
+                <class>AroundIo_MageExt_Block</class>
+            </mageext>
+        </blocks>
+        <helpers>
+            <mageext>
+                <class>AroundIo_MageExt_Helper</class>
+            </mageext>
+        </helpers>
+    </global>
+</config>

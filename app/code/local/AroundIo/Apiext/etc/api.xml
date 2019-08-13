@@ -1,0 +1,37 @@
+<!-- api.xml -->
+<config>
+    <api>
+        <resources>
+            <apiext_apicall translate="title" module="apiext">
+                <title>Aroundio app extended API calls</title>
+                <model>apiext/apiCall_api</model>
+                <acl>aroundio/apiext</acl>
+                <methods>
+                    <productDetails translate="title" module="apiext">
+                        <title>Get details of all products</title>
+                        <acl>aroundio/apiext/allaccess</acl>
+                    </productDetails>
+                </methods>
+            </apiext_apicall>
+        </resources>
+        <resources_alias>
+            <apicall>apiext_apicall</apicall>
+        </resources_alias>
+        <acl>
+            <resources>
+                <aroundio translate="title" module="apiext">
+                    <title>AroundIo</title>
+                    <sort_order>100</sort_order>
+                    <apiext translate="title" module="apiext">
+                        <title>Apiext</title>
+                        <sort_order>100</sort_order>
+                        <allaccess translate="title" module="apiext">
+                            <title>Core functionality required by all users.</title>
+                            <sort_order>10</sort_order>
+                        </allaccess>
+                    </apiext>
+                </aroundio>
+            </resources>
+        </acl>
+    </api>
+</config>

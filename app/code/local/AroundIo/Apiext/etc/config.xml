@@ -1,0 +1,19 @@
+<config>
+    <modules>
+        <AroundIo_Apiext>
+            <version>0.0.0.1</version>
+        </AroundIo_Apiext>
+    </modules>
+    <global>
+        <models>
+            <apiext>
+                <class>AroundIo_Apiext_Model</class>
+            </apiext>
+        </models>
+        <helpers>
+            <apiext>
+                <class>AroundIo_Apiext_Helper</class>
+            </apiext>
+        </helpers>
+    </global>
+</config>

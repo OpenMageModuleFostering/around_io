@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <AroundIo_Apiext>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Api />
+            </depends>
+        </AroundIo_Apiext>
+    </modules>
+</config>
