@@ -12,7 +12,7 @@
                         <acl>aroundio/apiext/allaccess</acl>
                     </productDetails>
                 </methods>
-                <methods>
+		<methods>
                     <debugging translate="title" module="apiext">
                         <title>Get details to debug</title>
                         <acl>aroundio/apiext/allaccess</acl>
