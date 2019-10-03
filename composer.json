@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Around_io",
+    "name": "OpenMageModuleFostering\/Around_io",
     "type": "magento-module",
     "license": "Aroundio-Trial-License",
     "homepage": "",
     "description": "A social media marketing automation tool made especially for you. Schedule all day posts in seconds.",
     "authors": [
-    {
-        "name": "Aroundio",
-        "email": "hi@around.io"
-    }
-],
+        {
+            "name": "Aroundio",
+            "email": "hi@around.io"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
